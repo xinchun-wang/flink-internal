@@ -14,7 +14,7 @@ if [[ "${FLINK_MODE}" == "new" ]]; then
     JOBMANAGER_TYPE=standalonesession
 fi
 ~~~
-其中start模式则启动为deamon方式，执行flink-deamon.sh运行；而start-foreground则启动为控制台方式，执行flink-console.sh运行。
+其中start模式则启动为deamon方式，执行flink-deamon.sh运行；而start-foreground则启动为控制台方式，执行flink-console.sh运行。
 ~~~bash
 if [[ $STARTSTOP == "start-foreground" ]]; then
     exec "${FLINK_BIN_DIR}"/flink-console.sh $JOBMANAGER_TYPE "${args[@]}"
@@ -26,4 +26,4 @@ fi
 ~~~bash
 CLASS_TO_RUN=org.apache.flink.runtime.entrypoint.StandaloneSessionClusterEntrypoint
 ~~~
-其中控制台模式使用的日志配置文件为：${FLINK_CONF_DIR}/log4j-console.properties或者logback-console.xml；而deamon模式使用的是${FLINK_CONF_DIR}/log4j.properties或者logback.xml。默认情况下，使用的是log4j进行日志输出。不管是jobmanager.sh还是flink-deamon.sh等脚本，都是为了初始化相关JVM参数、环境变量等，真正运行的逻辑还是在StandaloneSessionClusterEntrypoint中完成的。
+其中控制台模式使用的日志配置文件为：${FLINK_CONF_DIR}/log4j-console.properties或者logback-console.xml；而deamon模式使用的是${FLINK_CONF_DIR}/log4j.properties或者logback.xml。默认情况下，使用的是log4j进行日志输出。不管是jobmanager.sh还是flink-deamon.sh等脚本，都是为了初始化相关JVM参数、环境变量等，真正运行的逻辑还是在StandaloneSessionClusterEntrypoint中完成的。
