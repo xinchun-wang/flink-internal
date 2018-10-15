@@ -143,6 +143,7 @@ StatefulSet的配置
 Flink的配置文件和hadoop的配置文件，依赖ConfigMap来分发
 
 环境变量设置说明：
+
 |环境变量名称|参数|内容|备注|
 |------------ | -------------| -------------| -------------|
 |JOB_MANGER_HOSTS|StatefulSet.name-0,StatefulSet.name-1|flink-cluster-0,flink-cluster-1|JM的主机名，短主机名；可以不用FQDN|
