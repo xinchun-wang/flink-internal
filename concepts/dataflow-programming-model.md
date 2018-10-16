@@ -49,6 +49,7 @@ Redistributing 流（如上图中 map() 与 keyBy/window 之间，以及 keyBy/w
 * 事件收到时间 是事件进入Flink数据流源算子的时间。
 
 * 事件处理时间 是每一个执行时间操作的算子的本地时间。
+
 ![event ingestion processing_time](https://ci.apache.org/projects/flink/flink-docs-release-1.6/fig/event_ingestion_processing_time.svg)
 
 更多关于如何处理时间的细节可以查看事件时间文档.

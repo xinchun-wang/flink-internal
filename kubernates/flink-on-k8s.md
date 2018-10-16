@@ -120,7 +120,7 @@ spec:
       containers:
       - name: test
         imagePullPolicy: Always
-        image: 10.199.199.34:5000/flink:latest
+        image: ***.***.***.***:5000/flink:1.4.2
         args: ["sleep", "1d"]
         volumeMounts:
         - name: hdfs-conf
@@ -196,7 +196,7 @@ spec:
       containers:
       - name: flink-cluster
         imagePullPolicy: Always
-        image: 10.199.199.34:5000/flink:1.4.2
+        image: ***.***.***.***:5000/flink:1.4.2
         args: ["cluster", "ha"]
         volumeMounts:
           - name: hdfs-conf
@@ -220,7 +220,7 @@ spec:
         - name: TASK_MANAGER_NUMBER_OF_TASK_SLOTS
           value: "1"
         - name: FLINK_ZK_QUORUM
-          value: "10.198.199.112:2181"
+          value: "***.***.***.***:2181"
         - name: JOB_MANAGER_HEAP_MB
           value: "3072"
         - name: TASK_MANAGER_HEAP_MB
@@ -253,16 +253,16 @@ spec:
 ~~~bash
 kubectl get sts flink-cluster -o wide
 NAME            DESIRED   CURRENT   AGE       CONTAINERS      IMAGES
-flink-cluster   4         4         1h        flink-cluster   10.199.199.34:5000/flink:1.4.2
+flink-cluster   4         4         1h        flink-cluster   ***.***.***.***:5000/flink:1.4.2
 ~~~
 容器的Pod状态
 ~~~bash
 kubectl get pod -l app=flink-cluster  -o wide
 NAME              READY     STATUS    RESTARTS   AGE       IP            NODE
-flink-cluster-0   1/1       Running   0          1h        10.254.58.2   10.199.199.40
-flink-cluster-1   1/1       Running   0          1h        10.254.60.2   10.199.199.38
-flink-cluster-2   1/1       Running   0          1h        10.254.46.4   10.199.199.39
-flink-cluster-3   1/1       Running   0          1h        10.254.60.3   10.199.199.38
+flink-cluster-0   1/1       Running   0          1h        10.254.58.2   ***.***.***.***
+flink-cluster-1   1/1       Running   0          1h        10.254.60.2   ***.***.***.***
+flink-cluster-2   1/1       Running   0          1h        10.254.46.4   ***.***.***.***
+flink-cluster-3   1/1       Running   0          1h        10.254.60.3   ***.***.***.***
 ~~~
 相关的Service信息
 ~~~bash
